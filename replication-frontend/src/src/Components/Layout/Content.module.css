@@ -1,0 +1,17 @@
+.LeftContainer{
+    margin-top: 3.6em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #f8f9fa!important;
+    padding: 4 em;
+   
+}
+
+.RightContainer{
+    margin-top: 3.6em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}

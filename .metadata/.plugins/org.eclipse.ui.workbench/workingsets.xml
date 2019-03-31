@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553983411052_0" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=replication-backend/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=replication-backend/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553983411068_1" label="Java Test Sources" name="Java Test Sources">
+<item elementID="=replication-backend/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553983472529_3" label="parent" name="parent">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/replication-frontend" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/replication-backend" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553983426420_2" label="Window Working Set" name="Aggregate for window 1553983426420"/>
+</workingSetManager>
