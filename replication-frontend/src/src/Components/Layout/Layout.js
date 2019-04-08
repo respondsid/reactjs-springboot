@@ -1,7 +1,9 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from './NavBar'
-import ReplicationNav from './../Replication/ReplicationNavigation'
+import {Route} from 'react-router-dom';
+import ReplicationNavigation from './../ReplicationsNavigation/ReplicationNavigation'
+
 export default function Layout() {
     return (
         <Container>
@@ -9,7 +11,10 @@ export default function Layout() {
                 <Col><Navbar /></Col>
             </Row>
             <Row>
-                <Col><ReplicationNav/></Col>
+                <Col>
+                    <Route path="/replications-navigation"  component={ReplicationNavigation}></Route>
+                    <Route path="/configurations" exact></Route>
+                </Col>
             </Row>
         </Container>
 
