@@ -14,13 +14,13 @@ phases:
       - echo $REPOSITORY_URI
       - echo $TAG_NAME  
       # installation
-      - apt-get update -y
-      - apt-get install -y software-properties-common
-      - add-apt-repository ppa:openjdk-r/ppa
-      - apt-get update -y
-      - apt-get install -y openjdk-8-jdk
-      - apt-get install -y maven
-      - apt-get install -y gradle
+      #- apt-get update -y
+      #- apt-get install -y software-properties-common
+      #- add-apt-repository ppa:openjdk-r/ppa
+      #- apt-get update -y
+      #- apt-get install -y openjdk-8-jdk
+      #- apt-get install -y maven
+      #- apt-get install -y gradle
   pre_build:
     commands:
 
