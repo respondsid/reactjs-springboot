@@ -30,7 +30,7 @@ phases:
       - mvn package
       
       - echo Building the Docker image...  
-      - docker build -f src/main/docker/Dockerfile -t $TAG_NAME .
+      - docker build -f Dockerfile -t $TAG_NAME .
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
