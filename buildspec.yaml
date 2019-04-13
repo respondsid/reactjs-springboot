@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+artifacts:
+  files:
+    - replication-backend/target/replication-backend-0.0.1-SNAPSHOT.jar
+cache:
+  paths:
+    - '/root/.m2/**/*'
