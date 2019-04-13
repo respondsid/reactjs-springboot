@@ -1,0 +1,12 @@
+{
+  "Image": {
+    "Name": "745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr:react-springboot"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 8080,
+      "HostPort": 8000
+    }
+  ]
+}
+   

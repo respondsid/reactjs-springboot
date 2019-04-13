@@ -1,0 +1,2 @@
+docker build -t myapp:dev .
+docker run -p8080:8080 -t myapp:dev
