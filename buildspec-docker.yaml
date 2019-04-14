@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
-      - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"
+      - timeout 45 sh -c "until docker info; do echo .; sleep 1; done"
      # variables
       - REPOSITORY_URI=745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
       - ARTIFACT=react-springboot
