@@ -15,7 +15,7 @@ phases:
       - echo $TAG_NAME  
       # installation
       - apt-get update -y
-      - apt-get upgrade
+      - apt-get upgrade -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
       #- apt-get update -y
