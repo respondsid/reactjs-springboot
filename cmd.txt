@@ -1,2 +1,8 @@
 docker build -t myapp:dev .
 docker run -p8080:8080 -t myapp:dev
+
+docker login --username=yourhubusername --email=youremail@company.com
+docker tag bb38976d03cf yourhubusername/verse_gapminder:firsttry
+docker push yourhubusername/verse_gapminder
+
+docker exec -i -t 6054f165b6e9 /bin/bash
