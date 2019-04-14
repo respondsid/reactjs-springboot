@@ -14,13 +14,17 @@ phases:
       - echo $REPOSITORY_URI
       - echo $TAG_NAME  
       # installation
-      - apt-get update -y
-      - apt-get upgrade -y
+      - apt-get install -y maven
+      - wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+      - tar -xvzf apache-maven-3.6.0-bin.tar.gz
+      - mv apache-maven-3.6.0 maven
+      - 
+      #- apt-get update -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
       #- apt-get update -y
       #- apt-get install -y openjdk-8-jdk
-      - apt-get install -y maven
+      #
       #- apt-get install -y gradle
   pre_build:
     commands:
@@ -28,7 +32,7 @@ phases:
   build:
     commands:
       - echo Maven Build ...
-      - mvn package
+     # - mvn package
       
       - echo Building the Docker image...  
       - docker build -f Dockerfile -t $TAG_NAME .
