@@ -4,6 +4,7 @@ phases:
   install:
     commands:
      # variables
+      - /usr/bin/dockerd -H unix:///var/run/docker.sock > dockerd.log 2>&1&
       - REPOSITORY_URI=745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
       - ARTIFACT=react-springboot
       - ARTIFACT_TYPE=.jar 
