@@ -3,8 +3,6 @@ version: 0.2
 phases:
   install:
     commands:
-      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
-      - timeout 45 sh -c "until docker info; do echo .; sleep 1; done"
      # variables
       - REPOSITORY_URI=745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
       - ARTIFACT=react-springboot
@@ -16,6 +14,7 @@ phases:
       - echo $REPOSITORY_URI
       - echo $TAG_NAME  
       # installation
+      - apt-get update && apt-get install -y maven
       #- apt-get update -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
