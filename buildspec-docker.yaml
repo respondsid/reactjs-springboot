@@ -18,6 +18,7 @@ phases:
       - wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
       - tar -xvzf apache-maven-3.6.0-bin.tar.gz
       - mv apache-maven-3.6.0 maven
+      - mvn --version
       - 
       #- apt-get update -y
       #- apt-get install -y software-properties-common
