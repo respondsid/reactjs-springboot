@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Zerocode Dashboard",
   "author": "",
-  "homepage": "",
+  "homepage": ".",
   "copyright": "",
   "private": true,
   "dependencies": {

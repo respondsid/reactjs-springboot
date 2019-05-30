@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ReactController {
 
 	
-	@RequestMapping( {"/", "/home"} )
+	@RequestMapping( {"/", "/home","/elements/*","/pages/*","/apps/*","widgets"} )
     public String home(Model model) {
            return "forward:/index.html";
     }
