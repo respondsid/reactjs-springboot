@@ -20,7 +20,7 @@ phases:
       #- tar -xvzf apache-maven-3.6.0-bin.tar.gz
       #- mv apache-maven-3.6.0 /user/share/maven
       #- mvn --version
-      - apt-get update -y
+       - apt-get update -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
        - apt-get update -y
