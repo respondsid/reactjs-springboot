@@ -28,6 +28,7 @@ phases:
       # - apt-get update -y
       # - apt-get install -y openjdk-8-jdk
       # - apt-get install -y gradle
+      
   pre_build:
     commands:
        - echo Logging in to Amazon ECR....
