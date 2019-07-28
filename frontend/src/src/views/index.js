@@ -8,6 +8,7 @@ import Tabs from './elements/Tabs';
 import Tables from './elements/Tables';
 import Breadcrumbs from './elements/Breadcrumbs';
 import Forms from './elements/Forms';
+import Project from './elements/Project';
 import Loaders from './elements/Loaders';
 import Avatars from './elements/Avatars';
 import Invoice from './pages/Invoice';
@@ -27,6 +28,11 @@ const pageList = [
     name: 'Dashboard',
     path: '/home',
     component: Dashboard
+  },
+  {
+    name: 'Project',
+    path: '/elements/project',
+    component: Project
   },
   {
     name: 'Buttons',

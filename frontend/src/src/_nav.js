@@ -6,28 +6,16 @@ export default {
       icon: 'Home',
     },
     {
-      name: 'UI Elements',
-      icon: 'Layers',
+      name: 'Projects',
+      icon: 'Package',
       children: [
         {
-          name: 'Buttons',
+          name: 'Project',
+          url: '/elements/project',
+        },
+        {
+          name: 'Project',
           url: '/elements/buttons',
-        },
-        {
-          name: 'Grid',
-          url: '/elements/grid',
-        },
-        {
-          name: 'Alerts',
-          url: '/elements/alerts',
-        },
-        {
-          name: 'Typography',
-          url: '/elements/typography',
-        },
-        {
-          name: 'Cards',
-          url: '/elements/cards',
         },
         {
           name: 'Tabs',
