@@ -30,6 +30,8 @@ phases:
       # - apt-get install -y gradle
   pre_build:
     commands:
+       - echo Logging in to Amazon ECR...
+       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 
   build:
     commands:
@@ -41,9 +43,6 @@ phases:
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
-      #- docker tag $REPOSITORY_URI:$ARTIFACT $REPOSITORY_URI:$$ARTIFACT
-       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-       - $(aws ecr get-login --region us-east-2 --no-include-email) 
        - echo Build completed on `date`
        - echo Pushing the Docker images...
        - docker push $TAG_NAME
