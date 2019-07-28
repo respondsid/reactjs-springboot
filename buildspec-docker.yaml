@@ -9,7 +9,7 @@ phases:
      # - /usr/bin/dockerd -H unix:///var/run/docker.sock > dockerd.log 2>&1&
        - REPOSITORY_URI=181715179798.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
        - ARTIFACT=zerocode-admin-app
-       - ARTIFACT_TYPE=.jar 
+       #- ARTIFACT_TYPE=.jar 
        - TAG_NAME=$REPOSITORY_URI:latest
      # - echo $AWS_DEFAULT_REGION 
      # - echo $ARTIFACT
