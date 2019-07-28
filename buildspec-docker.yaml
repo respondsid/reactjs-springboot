@@ -2,6 +2,8 @@ version: 0.2
 # wolfgang unger 4.2018 - code project with java image - install docker 
 phases:
   install:
+    runtime-versions:
+      java: openjdk8
     commands:
      # variables
      # - /usr/bin/dockerd -H unix:///var/run/docker.sock > dockerd.log 2>&1&
@@ -23,9 +25,9 @@ phases:
        - apt-get update -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
-       - apt-get update -y
-       - apt-get install -y openjdk-8-jdk
-       - apt-get install -y gradle
+      # - apt-get update -y
+      # - apt-get install -y openjdk-8-jdk
+      # - apt-get install -y gradle
   pre_build:
     commands:
 
