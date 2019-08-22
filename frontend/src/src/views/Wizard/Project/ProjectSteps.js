@@ -5,48 +5,43 @@ import OpenSpecConfig from './Steps/OpenSpecConfig';
 import ZerocodeSteps from './Steps/ZerocodeSteps';
 import Review from './Steps/Review';
 import 'react-stepzilla/src/css/main.css';
-import ProjectContextProvider from './../utils/ProjectContext';
+import { ProjectContext } from '../utils/ProjectContext';
+import ProjectDescriptionStep from './Steps/ProjectDescription';
+
 
 export default class ProjectSteps extends Component {
  constructor(props) {
      super(props);
-     this.updateProjectData=this.updateProjectData.bind(this);
-     this.goToStep=this.goToStep.bind(this);
+     this.updateProjectData=projectData=>this.setState((prevState)=>{ const mergedProjectDate={...prevState.projectData,...projectData}
+                                                                      return ({...prevState,projectData:mergedProjectDate});});
      this.state={
          loading:false,
          projectData:{
-             name:"test",
+             name:"test12",
              description:"testDescription",
              projectType:"OPENAPI",
              openAPISpec:"",
              scenarios:[]
-         },
-         updateProjectData:this.updateProjectData,
-         goToStep: this.goToStep
+         }
+
      }
  }
 
- updateProjectData(){
 
- }
-
- goToStep(){
-     
- }
 
   render() {
     const steps = [
-      { name: 'Project Description', component: <ProjectDescription /> },
+      { name: 'Project Description', component: <ProjectDescriptionStep/> },
       { name: 'OpenSpec Configuration', component: <OpenSpecConfig /> },
-      { name: 'Zerocode Steps', component: <ZerocodeSteps /> },
-      { name: 'Review', component: <Review /> },
+      { name: 'Zerocode Steps', component: <ZerocodeSteps/> },
+      { name: 'Review', component: <Review /> }
     ];
     return (
-      <ProjectContextProvider value={this.state}>
+      <ProjectContext.Provider value={{projectData:this.state.projectData, updateProjectData:this.updateProjectData}}>
         <div className="step-progress">
-          <StepZilla steps={steps} dontValidate={true} showSteps={true} />
+        <StepZilla steps={steps}  showSteps={true} />
         </div>
-      </ProjectContextProvider>
+      </ProjectContext.Provider>
     );
   }
 }
