@@ -2,34 +2,37 @@ version: 0.2
 # wolfgang unger 4.2018 - code project with java image - install docker 
 phases:
   install:
+    runtime-versions:
+      java: openjdk8
     commands:
      # variables
-      - /usr/bin/dockerd -H unix:///var/run/docker.sock > dockerd.log 2>&1&
-      - REPOSITORY_URI=745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
-      - ARTIFACT=react-springboot
-      - ARTIFACT_TYPE=.jar 
-      - TAG_NAME=$REPOSITORY_URI:$ARTIFACT
-      - echo $AWS_DEFAULT_REGION 
-      - echo $ARTIFACT
-      - echo $ARTIFACT_TYPE
-      - echo $REPOSITORY_URI
-      - echo $TAG_NAME  
+     # - /usr/bin/dockerd -H unix:///var/run/docker.sock > dockerd.log 2>&1&
+       - REPOSITORY_URI=181715179798.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr  
+       - ARTIFACT=zerocode-admin-app
+       #- ARTIFACT_TYPE=.jar 
+       - TAG_NAME=$REPOSITORY_URI:latest
+     # - echo $AWS_DEFAULT_REGION 
+     # - echo $ARTIFACT
+     # - echo $ARTIFACT_TYPE
+     # - echo $REPOSITORY_URI
+     # - echo $TAG_NAME  
       # installation
-      #- apt-get update && apt-get install -y maven
+       #- apt-get update && apt-get install -y maven
       #- wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
       #- tar -xvzf apache-maven-3.6.0-bin.tar.gz
       #- mv apache-maven-3.6.0 /user/share/maven
       #- mvn --version
-      - 
-      #- apt-get update -y
+      # - apt-get update -y
       #- apt-get install -y software-properties-common
       #- add-apt-repository ppa:openjdk-r/ppa
-      #- apt-get update -y
-      #- apt-get install -y openjdk-8-jdk
-      #
-      #- apt-get install -y gradle
+      # - apt-get update -y
+      # - apt-get install -y openjdk-8-jdk
+      # - apt-get install -y gradle
+      
   pre_build:
     commands:
+       - echo Logging in to Amazon ECR....
+       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 
   build:
     commands:
@@ -41,14 +44,11 @@ phases:
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
-      #- docker tag $REPOSITORY_URI:$ARTIFACT $REPOSITORY_URI:$$ARTIFACT
-       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-       - $(aws ecr get-login --region us-east-2 --no-include-email) 
        - echo Build completed on `date`
        - echo Pushing the Docker images...
        - docker push $TAG_NAME
        
 artifacts:
      files:
-       - target/replication-backend/target/replication-backend-0.0.1-SNAPSHOT.jar
+       - target/backend/target/zerocode-admin-app-0.0.1-SNAPSHOT.jar
        - Dockerrun.aws.json

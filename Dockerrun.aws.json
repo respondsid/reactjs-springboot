@@ -1,6 +1,6 @@
 {
   "Image": {
-    "Name": "745479982323.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr:react-springboot"
+    "Name": "181715179798.dkr.ecr.us-east-2.amazonaws.com/aws-sid-ecr/aws-sid-ecr:latest"
   },
   "Ports": [
     {
